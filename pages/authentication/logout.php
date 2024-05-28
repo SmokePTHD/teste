@@ -20,15 +20,15 @@ session_destroy();
     <!-- ===============================================-->
     <!--    Favicons-->
     <!-- ===============================================-->
-    <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/img/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/img/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/img/favicons/favicon-16x16.png">
-    <link rel="shortcut icon" type="image/x-icon" href="../../../assets/img/favicons/favicon.ico">
-    <link rel="manifest" href="../../../assets/img/favicons/manifest.json">
-    <meta name="msapplication-TileImage" content="../../../assets/img/favicons/mstile-150x150.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/favicons/favicon-16x16.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/favicons/favicon.ico">
+    <link rel="manifest" href="../../assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="../../assets/img/favicons/mstile-150x150.png">
     <meta name="theme-color" content="#ffffff">
-    <script src="../../../assets/js/config.js"></script>
-    <script src="../../../vendors/simplebar/simplebar.min.js"></script>
+    <script src="../../assets/js/config.js"></script>
+    <script src="../../vendors/simplebar/simplebar.min.js"></script>
 
 
     <!-- ===============================================-->
@@ -36,9 +36,9 @@ session_destroy();
     <!-- ===============================================-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
-    <link href="../../../vendors/simplebar/simplebar.min.css" rel="stylesheet">
-    <link href="../../../assets/css/theme.css" rel="stylesheet" id="style-default">
-    <link href="../../../assets/css/user.min.css" rel="stylesheet" id="user-style-default">
+    <link href="../../vendors/simplebar/simplebar.min.css" rel="stylesheet">
+    <link href="../../assets/css/theme.css" rel="stylesheet" id="style-default">
+    <link href="../../assets/css/user.min.css" rel="stylesheet" id="user-style-default">
   </head>
 
 
@@ -56,13 +56,13 @@ session_destroy();
                 <div class="row g-0 h-100">
                   <div class="col-md-5 text-center bg-card-gradient">
                     <div class="position-relative p-4 pt-md-5 pb-md-7 light">
-                      <div class="bg-holder bg-auth-card-shape" style="background-image:url(../../../assets/img/icons/spot-illustrations/half-circle.png);">
+                      <div class="bg-holder bg-auth-card-shape" style="background-image:url(../../assets/img/icons/spot-illustrations/half-circle.png);">
                       </div>
                       <!--/.bg-holder-->
 
                       <div class="z-index-1 position-relative">
-                        <a class="d-flex justify-content-center align-items-center" href="../../../index.php">
-                          <img src="../../../assets/img/logoClinica.png" width="320">
+                        <a class="d-flex justify-content-center align-items-center" href="../../index.php">
+                          <img src="../../assets/img/logoClinica.png" width="320">
                         </a>
                       </div>
                     </div>
@@ -71,7 +71,7 @@ session_destroy();
                     <div class="p-4 p-md-5 flex-grow-1">
                       <div class="text-center">
                         <h3>Bom Trabalho!</h3>
-                        <p>Você saiu da sua conta</p><a class="btn btn-primary btn-sm mt-3" style="background: #0388A6;" href="../../../pages/authentication/login.html"><span class="fas fa-chevron-left me-1" data-fa-transform="shrink-4 down-1"></span>Voltar para o Login</a>
+                        <p>Você saiu da sua conta</p><a class="btn btn-primary btn-sm mt-3" style="background: #0388A6;" href="../../pages/authentication/login.html"><span class="fas fa-chevron-left me-1" data-fa-transform="shrink-4 down-1"></span>Voltar para o Login</a>
                       </div>
                     </div>
                   </div>
@@ -90,15 +90,15 @@ session_destroy();
     <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
-    <script src="../../../vendors/popper/popper.min.js"></script>
-    <script src="../../../vendors/bootstrap/bootstrap.min.js"></script>
-    <script src="../../../vendors/anchorjs/anchor.min.js"></script>
-    <script src="../../../vendors/is/is.min.js"></script>
-    <script src="../../../vendors/fontawesome/all.min.js"></script>
-    <script src="../../../vendors/lodash/lodash.min.js"></script>
+    <script src="../../vendors/popper/popper.min.js"></script>
+    <script src="../../vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="../../vendors/anchorjs/anchor.min.js"></script>
+    <script src="../../vendors/is/is.min.js"></script>
+    <script src="../../vendors/fontawesome/all.min.js"></script>
+    <script src="../../vendors/lodash/lodash.min.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
-    <script src="../../../vendors/list.js/list.min.js"></script>
-    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../vendors/list.js/list.min.js"></script>
+    <script src="../../assets/js/theme.js"></script>
 
   </body>
 

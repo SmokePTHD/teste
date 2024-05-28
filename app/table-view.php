@@ -10,7 +10,7 @@
     <!-- ===============================================-->
     <!--    Document Title-->
     <!-- ===============================================-->
-    <title>Clinica Rio Este | Calendar</title>
+    <title>Clinica Rio Este | Funcionarios</title>
 
 
     <!-- ===============================================-->
@@ -30,13 +30,19 @@
     <!-- ===============================================-->
     <!--    Stylesheets-->
     <!-- ===============================================-->
-    <link href="../vendors/fullcalendar/main.min.css" rel="stylesheet">
-    <link href="../vendors/flatpickr/flatpickr.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
     <link href="../vendors/simplebar/simplebar.min.css" rel="stylesheet">
+    <link href="../assets/css/theme-rtl.min.css" rel="stylesheet" id="style-rtl">
     <link href="../assets/css/theme.min.css" rel="stylesheet" id="style-default">
+    <link href="../assets/css/user-rtl.min.css" rel="stylesheet" id="user-style-rtl">
     <link href="../assets/css/user.min.css" rel="stylesheet" id="user-style-default">
+    <script>     
+      var linkRTL = document.getElementById('style-rtl');
+      var userLinkRTL = document.getElementById('user-style-rtl');
+      linkRTL.setAttribute('disabled', true);
+      userLinkRTL.setAttribute('disabled', true);
+    </script>
   </head>
 
 
@@ -47,7 +53,21 @@
     <!-- ===============================================-->
     <main class="main" id="top">
       <div class="container" data-layout="container">
+        <script>
+          var isFluid = JSON.parse(localStorage.getItem('isFluid'));
+          if (isFluid) {
+            var container = document.querySelector('[data-layout]');
+            container.classList.remove('container');
+            container.classList.add('container-fluid');
+          }
+        </script>
         <nav class="navbar navbar-light navbar-vertical navbar-expand-xl">
+          <script>
+            var navbarStyle = localStorage.getItem("navbarStyle");
+            if (navbarStyle && navbarStyle !== 'transparent') {
+              document.querySelector('.navbar-vertical').classList.add(`navbar-${navbarStyle}`);
+            }
+          </script>
           <div class="d-flex align-items-center">
             <div class="toggle-icon-wrapper">
 
@@ -241,7 +261,8 @@
                     </li>
                   </ul>
                 </li>             
-              </ul>
+              </ul>                            
+
             </div>
           </div>
         </nav>
@@ -460,6 +481,7 @@
                             <div class="notification-avatar">
                               <div class="avatar avatar-xl me-3">
                                 <img class="rounded-circle" src="../assets/img/team/10.jpg" alt="" />
+
                               </div>
                             </div>
                             <div class="notification-body">
@@ -473,6 +495,96 @@
                       </div>
                     </div>
                     <div class="card-footer text-center border-top"><a class="card-link d-block" href="../app/social/notifications.html">View all</a></div>
+                  </div>
+                </div>
+
+              </li>
+              <li class="nav-item dropdown px-1">
+                <a class="nav-link fa-icon-wait nine-dots p-1" id="navbarDropdownMenu" role="button" data-hide-on-body-scroll="data-hide-on-body-scroll" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="43" viewBox="0 0 16 16" fill="none">
+                    <circle cx="2" cy="2" r="2" fill="#6C6E71"></circle>
+                    <circle cx="2" cy="8" r="2" fill="#6C6E71"></circle>
+                    <circle cx="2" cy="14" r="2" fill="#6C6E71"></circle>
+                    <circle cx="8" cy="8" r="2" fill="#6C6E71"></circle>
+                    <circle cx="8" cy="14" r="2" fill="#6C6E71"></circle>
+                    <circle cx="14" cy="8" r="2" fill="#6C6E71"></circle>
+                    <circle cx="14" cy="14" r="2" fill="#6C6E71"></circle>
+                    <circle cx="8" cy="2" r="2" fill="#6C6E71"></circle>
+                    <circle cx="14" cy="2" r="2" fill="#6C6E71"></circle>
+                  </svg></a>
+                <div class="dropdown-menu dropdown-caret dropdown-caret dropdown-menu-end dropdown-menu-card dropdown-caret-bg" aria-labelledby="navbarDropdownMenu">
+                  <div class="card shadow-none">
+                    <div class="scrollbar-overlay nine-dots-dropdown">
+                      <div class="card-body px-3">
+                        <div class="row text-center gx-0 gy-0">
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="../pages/user/profile.html" target="_blank">
+                              <div class="avatar avatar-2xl"> <img class="rounded-circle" src="../assets/img/team/3.jpg" alt="" /></div>
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2">Account</p>
+                            </a></div>
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="https://themewagon.com/" target="_blank"><img class="rounded" src="../assets/img/nav-icons/themewagon.png" alt="" width="40" height="40" />
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Themewagon</p>
+                            </a></div>
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="https://mailbluster.com/" target="_blank"><img class="rounded" src="../assets/img/nav-icons/mailbluster.png" alt="" width="40" height="40" />
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Mailbluster</p>
+                            </a></div>
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img class="rounded" src="../assets/img/nav-icons/google.png" alt="" width="40" height="40" />
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Google</p>
+                            </a></div>
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img class="rounded" src="../assets/img/nav-icons/spotify.png" alt="" width="40" height="40" />
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Spotify</p>
+                            </a></div>
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img class="rounded" src="../assets/img/nav-icons/steam.png" alt="" width="40" height="40" />
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Steam</p>
+                            </a></div>
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img class="rounded" src="../assets/img/nav-icons/github-light.png" alt="" width="40" height="40" />
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Github</p>
+                            </a></div>
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img class="rounded" src="../assets/img/nav-icons/discord.png" alt="" width="40" height="40" />
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Discord</p>
+                            </a></div>
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img class="rounded" src="../assets/img/nav-icons/xbox.png" alt="" width="40" height="40" />
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">xbox</p>
+                            </a></div>
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img class="rounded" src="../assets/img/nav-icons/trello.png" alt="" width="40" height="40" />
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Kanban</p>
+                            </a></div>
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img class="rounded" src="../assets/img/nav-icons/hp.png" alt="" width="40" height="40" />
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Hp</p>
+                            </a></div>
+                          <div class="col-12">
+                            <hr class="my-3 mx-n3 bg-200" />
+                          </div>
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img class="rounded" src="../assets/img/nav-icons/linkedin.png" alt="" width="40" height="40" />
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Linkedin</p>
+                            </a></div>
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img class="rounded" src="../assets/img/nav-icons/twitter.png" alt="" width="40" height="40" />
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Twitter</p>
+                            </a></div>
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img class="rounded" src="../assets/img/nav-icons/facebook.png" alt="" width="40" height="40" />
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Facebook</p>
+                            </a></div>
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img class="rounded" src="../assets/img/nav-icons/instagram.png" alt="" width="40" height="40" />
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Instagram</p>
+                            </a></div>
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img class="rounded" src="../assets/img/nav-icons/pinterest.png" alt="" width="40" height="40" />
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Pinterest</p>
+                            </a></div>
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img class="rounded" src="../assets/img/nav-icons/slack.png" alt="" width="40" height="40" />
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Slack</p>
+                            </a></div>
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img class="rounded" src="../assets/img/nav-icons/deviantart.png" alt="" width="40" height="40" />
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Deviantart</p>
+                            </a></div>
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="../app/events/event-detail.html" target="_blank">
+                              <div class="avatar avatar-2xl">
+                                <div class="avatar-name rounded-circle bg-soft-primary text-primary"><span class="fs-2">E</span></div>
+                              </div>
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2">Events</p>
+                            </a></div>
+                          <div class="col-12"><a class="btn btn-outline-primary btn-sm mt-4" href="#!">Show more</a></div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -500,36 +612,121 @@
               </li>
             </ul>
           </nav>
-          <div class="card overflow-hidden">
-            <div class="card-header">
-              <div class="row gx-0 align-items-center">
-                <div class="col-auto d-flex justify-content-end order-md-1">
-                  <button class="btn icon-item icon-item-sm shadow-none p-0 me-1 ms-md-2" type="button" data-event="prev" data-bs-toggle="tooltip" title="Anterior"><span class="fas fa-arrow-left"></span></button>
-                  <button class="btn icon-item icon-item-sm shadow-none p-0 me-1 me-lg-2" type="button" data-event="next" data-bs-toggle="tooltip" title="Seguinte"><span class="fas fa-arrow-right"></span></button>
-                </div>
-                <div class="col-auto col-md-auto order-md-2">
-                  <h4 class="mb-0 fs-0 fs-sm-1 fs-lg-2 calendar-title"></h4>
-                </div>
-                <div class="col col-md-auto d-flex justify-content-end order-md-3">
-                  <button class="btn btn-falcon-primary btn-sm" type="button" data-event="today">Hoje</button>
-                </div>
-                <div class="col-md-auto d-md-none">
-                  <hr />
-                </div>
-                <div class="col-auto d-flex order-md-0">
-                  <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#addEventModal"> <span class="fas fa-plus me-2"></span>Add Schedule</button>
-                </div>
-                <div class="col d-flex justify-content-end order-md-2">
-                  <div class="dropdown font-sans-serif me-md-2">
-                    <button class="btn btn-falcon-default text-600 btn-sm dropdown-toggle dropdown-caret-none" type="button" id="email-filter" data-bs-toggle="dropdown" data-boundary="viewport" aria-haspopup="true" aria-expanded="false"><span data-view-title="data-view-title">Month View</span><span class="fas fa-sort ms-2 fs--1"></span></button>
-                    <div class="dropdown-menu dropdown-menu-end border py-2" aria-labelledby="email-filter"><a class="active dropdown-item d-flex justify-content-between" href="#!" data-fc-view="dayGridMonth">Month View<span class="icon-check"><span class="fas fa-check" data-fa-transform="down-4 shrink-4"></span></span></a><a class="dropdown-item d-flex justify-content-between" href="#!" data-fc-view="timeGridWeek">Week View<span class="icon-check"><span class="fas fa-check" data-fa-transform="down-4 shrink-4"></span></span></a><a class="dropdown-item d-flex justify-content-between" href="#!" data-fc-view="timeGridDay">Day View<span class="icon-check"><span class="fas fa-check" data-fa-transform="down-4 shrink-4"></span></span></a><a class="dropdown-item d-flex justify-content-between" href="#!" data-fc-view="listWeek">List View<span class="icon-check"><span class="fas fa-check" data-fa-transform="down-4 shrink-4"></span></span></a><a class="dropdown-item d-flex justify-content-between" href="#!" data-fc-view="listYear">Year View<span class="icon-check"><span class="fas fa-check" data-fa-transform="down-4 shrink-4"></span></span></a>
+          <div class="row gx-3">
+            <div class="col-xxl-10 col-xl-9">
+              <div class="card" id="ticketsTable" data-list='{"valueNames":["client","subject","status","priority","agent"],"page":11,"pagination":true,"fallback":"tickets-table-fallback"}'>
+                <div class="card-header border-bottom border-200 px-0">
+                  <div class="d-lg-flex justify-content-between">
+                    <div class="row flex-between-center gy-2 px-x1">
+                      <div class="col-auto pe-0">
+                        <h6 class="mb-0">Funcionários</h6>
+                      </div>
+                      <div class="col-auto">
+                        <form>
+                          <div class="input-group input-search-width">
+                            <input class="form-control form-control-sm shadow-none search" type="search" placeholder="Procurar por Nome" aria-label="search" />
+                            <button class="btn btn-sm btn-outline-secondary border-300 hover-border-secondary"><span class="fa fa-search fs--1"></span></button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                    <div class="border-bottom border-200 my-3"></div>
+                    <div class="d-flex align-items-center justify-content-between justify-content-lg-end px-x1">
+                      <button class="btn btn-sm btn-falcon-default d-xl-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#ticketOffcanvas" aria-controls="ticketOffcanvas"><span class="fas fa-filter" data-fa-transform="shrink-4 down-1"></span><span class="ms-1 d-none d-sm-inline-block">Filter</span></button>
+                      <div class="bg-300 mx-3 d-none d-lg-block d-xl-none" style="width:1px; height:29px"></div>
+                      <div class="d-none" id="table-ticket-actions">
+                        <div class="d-flex">
+                          <select class="form-select form-select-sm" aria-label="Bulk actions">
+                            <option selected="">Bulk actions</option>
+                            <option value="Refund">Refund</option>
+                            <option value="Delete">Delete</option>
+                            <option value="Archive">Archive</option>
+                          </select>
+                          <button class="btn btn-falcon-default btn-sm ms-2" type="button">Apply</button>
+                        </div>
+                      </div>
+                      <div class="d-flex align-items-center" id="table-ticket-replace-element">
+                        <!-- <button class="btn btn-falcon-default btn-sm mx-2" type="button"><span class="fas fa-plus" data-fa-transform="shrink-3"></span><span class="d-none d-sm-inline-block d-xl-none d-xxl-inline-block ms-1">New</span></button> -->
+                        <!-- <button class="btn btn-falcon-default btn-sm" type="button"><span class="fas fa-external-link-alt" data-fa-transform="shrink-3"></span><span class="d-none d-sm-inline-block d-xl-none d-xxl-inline-block ms-1">Export</span></button> -->
+                        <div class="dropdown font-sans-serif ms-2">
+                          <button class="btn btn-falcon-default text-600 btn-sm dropdown-toggle dropdown-caret-none" type="button" id="preview-dropdown" data-bs-toggle="dropdown" data-boundary="viewport" aria-haspopup="true" aria-expanded="false"><span class="fas fa-ellipsis-h fs--2"></span></button>
+                           <div class="dropdown-menu dropdown-menu-end border py-2" aria-labelledby="preview-dropdown"><a class="dropdown-item" href="#!">Novo Funcionário</a> <!-- <a class="dropdown-item" href="#!">Export</a> -->
+                            <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remover</a>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
+                <div class="card-body p-0">
+                  <div class="table-responsive scrollbar">
+                    <table class="table table-sm mb-0 fs--1 table-view-tickets">
+                      <thead class="text-800 bg-light">
+                        <tr>
+                          <th class="py-2 fs-0 pe-2" style="width: 28px;">
+                            <div class="form-check d-flex align-items-center">
+                              <input class="form-check-input" id="checkbox-bulk-table-tickets-select" type="checkbox" data-bulk-select='{"body":"table-ticket-body","actions":"table-ticket-actions","replacedElement":"table-ticket-replace-element"}' />
+                            </div>
+                          </th>
+                          <th class="sort align-middle ps-2" data-sort="client">Nome</th>
+                          <th class="sort align-middle" data-sort="email" style="min-width:15.625rem">Email</th>
+                          <th class="sort align-middle" data-sort="telemovel">Telemovel</th>
+                          <th class="sort align-middle" data-sort="status">Status</th>
+                          <th class="sort align-middle" data-sort="priority">Cargo</th>
+                          <th class="sort align-middle"></th>
+                          <!-- <th class="sort align-middle text-end" data-sort="agent">Agent</th> -->
+                        </tr>
+                      </thead>
+                      <tbody class="list" id="table-ticket-body">
+                        <tr>
+                          <td class="align-middle fs-0 py-3">
+                            <div class="form-check mb-0">
+                              <input class="form-check-input" type="checkbox" id="table-view-tickets-0" data-bulk-select-row="data-bulk-select-row" />
+                            </div> 
+                          </td>
+                          <td class="align-middle client white-space-nowrap pe-3 pe-xxl-4 ps-2">
+                            <div class="d-flex align-items-center gap-2 position-relative">
+                              <div class="avatar avatar-xl">
+                                <div class="avatar-name rounded-circle"><span>GS</span></div>
+                              </div>
+                              <h6 class="mb-0"><a class="stretched-link text-900" href="../app/support-desk/contact-details.html">Gonçalo Sousa</a></h6>
+                            </div>
+                          </td>
+                          <td class="align-middle subject py-2 pe-4"><a class="fw-semi-bold" href="../app/support-desk/tickets-preview.html">testeteste@gmail.com</a></td>
+                          <td class="align-middle subject py-2 pe-4"><a class="fw-semi-bold">+351 932 346 411</a></td>
+                          <td class="align-middle status fs-0 pe-4"><small class="badge rounded badge-soft-danger false">Offline</small>
+                          </td>
+                          <td class="align-middle agent">
+                            <select class="form-select form-select-sm w-auto ms-auto" aria-label="agents actions">
+                              <option>Selecionar Cargo</option>
+                              <option selected="selected">Dona</option>
+                              <option>Gestor</option>
+                              <option>Khalid</option>
+                            </select>
+                          </td>
+                          <td>
+                            <button class="btn btn-falcon-default text-600 btn-sm dropdown-toggle dropdown-caret-none" type="button" id="preview-dropdown" data-bs-toggle="dropdown" data-boundary="viewport" aria-haspopup="true" aria-expanded="false"><span class="fas fa-ellipsis-h fs--2"></span></button>
+                              <div class="dropdown-menu dropdown-menu-end border py-2" aria-labelledby="preview-dropdown"><a class="dropdown-item" href="#!">Editar</a> <!-- <a class="dropdown-item" href="#!">Export</a> -->
+                                <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remover</a>
+                            </div>
+                          </td>
+                        </tr>
+                        <?php include '../backend/tabelaUsers.php';?>
+                      </tbody>
+                    </table>
+                    <div class="text-center d-none" id="tickets-table-fallback">
+                      <p class="fw-bold fs-1 mt-3">Sem Funcionarios</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <div class="d-flex justify-content-center">
+                    <button class="btn btn-sm btn-falcon-default me-1" type="button" title="Previous" data-list-pagination="prev"><span class="fas fa-chevron-left"></span></button>
+                    <ul class="pagination mb-0"></ul>
+                    <button class="btn btn-sm btn-falcon-default ms-1" type="button" title="Next" data-list-pagination="next"><span class="fas fa-chevron-right"></span></button>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="card-body p-0 scrollbar">
-              <div class="calendar-outline" id="appCalendar"></div>
             </div>
           </div>
           <footer class="footer">
@@ -540,69 +737,11 @@
             </div>
           </footer>
         </div>
-        <div class="modal fade" id="eventDetailsModal" tabindex="-1">
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content border"></div>
-          </div>
-        </div>
-        <div class="modal fade" id="addEventModal" tabindex="-1">
-          <div class="modal-dialog">
-            <div class="modal-content border">
-              <form id="addEventForm" autocomplete="off">
-                <div class="modal-header px-x1 bg-light border-bottom-0">
-                  <h5 class="modal-title">Create Schedule</h5>
-                  <button class="btn-close me-n1" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body p-x1">
-                  <div class="mb-3">
-                    <label class="fs-0" for="eventTitle">Título</label>
-                    <input class="form-control" id="eventTitle" type="text" name="title" required="required" />
-                  </div>
-                  <div class="mb-3">
-                    <label class="fs-0" for="eventStartDate">Data Início</label>
-                    <input class="form-control datetimepicker" id="eventStartDate" type="text" required="required" name="startDate" placeholder="dd/mm/aaaa hh:mm" data-options='{"static":"true","enableTime":"true","dateFormat":"Y-m-d H:i"}' />
-                  </div>
-                  <div class="mb-3">
-                    <label class="fs-0" for="eventEndDate">Data Fim</label>
-                    <input class="form-control datetimepicker" id="eventEndDate" type="text" name="endDate" placeholder="dd/mm/aaa hh:mm" data-options='{"static":"true","enableTime":"true","dateFormat":"Y-m-d H:i"}' />
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="eventAllDay" name="allDay" />
-                    <label class="form-check-label" for="eventAllDay">Todo o Dia
-                    </label>
-                  </div>
-                  <div class="mb-3">
-                    <label class="fs-0">Schedule Meeting</label>
-                    <div><a class="btn badge-soft-success btn-sm" href="#!"><span class="fas fa-video me-2"></span>Add video conference link</a></div>
-                  </div>
-                  <div class="mb-3">
-                    <label class="fs-0" for="eventDescription">Descrição</label>
-                    <textarea class="form-control" rows="3" name="description" id="eventDescription"></textarea>
-                  </div>
-                  <div class="mb-3">
-                    <label class="fs-0" for="eventLabel">Label</label>
-                    <select class="form-select" id="eventLabel" name="label">
-                      <option value="" selected="selected">None</option>
-                      <option value="primary">Business</option>
-                      <option value="danger">Important</option>
-                      <option value="success">Personal</option>
-                      <option value="warning">Must Attend</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="modal-footer d-flex justify-content-end align-items-center bg-light border-0">
-                  <button class="btn btn-primary px-4" type="submit">Guardar</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
       </div>
     </main>
     <!-- ===============================================-->
     <!--    End of Main Content-->
     <!-- ===============================================-->
-      
 
 
     <!-- ===============================================-->
@@ -612,9 +751,7 @@
     <script src="../vendors/bootstrap/bootstrap.min.js"></script>
     <script src="../vendors/anchorjs/anchor.min.js"></script>
     <script src="../vendors/is/is.min.js"></script>
-    <script src="../vendors/fullcalendar/main.js"></script>
-    <script src="../assets/js/flatpickr.js"></script>
-    <script src="../vendors/dayjs/dayjs.min.js"></script>
+    <script src="../vendors/echarts/echarts.min.js"></script>
     <script src="../vendors/fontawesome/all.min.js"></script>
     <script src="../vendors/lodash/lodash.min.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>

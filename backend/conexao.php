@@ -1,8 +1,8 @@
 <?php 
-$host = '';
-$dbuser = '';
+$host = 'localhost';
+$dbuser = 'root';
 $dbpass = '';
-$dbtable = '';
+$dbtable = 'clinica-rio-este';
 
 $conn = mysqli_connect($host, $dbuser, $dbpass, $dbtable);
 
@@ -11,5 +11,4 @@ if (!$conn) {
 }
 
 return $conn;
-
 ?>
